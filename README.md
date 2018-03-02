@@ -1,7 +1,7 @@
 # theDiningPhilosophers
 This program is the solution to the dining-philosopher's problem using p_threads and it's functions.
 
-#Instructions to compile the program
+# Instructions to compile the program
 1. clone this repo using git clone 
 2. cd into the project directory
 3. type make from command line
