@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <pthread.h>
 #include <stdlib.h>
+#include <unistd.h>
 
 typedef struct{
 	int id;
@@ -13,7 +14,7 @@ void pickup_forks(int philosopher_number, int totalPhilo);
 pthread_cond_t condVar;
 pthread_mutex_t mutex;
 void *solvePhilosophy(void* args);
-int forks[1000];
+int* forks;
 
 int main(int argc, char*argv[]){
 	if (argc != 2){
@@ -29,9 +30,9 @@ int main(int argc, char*argv[]){
 	int i;
 	srand(time(NULL)); 
 	//int philosophers[] = {0,1,2,3,4};
-	
+	forks = malloc(totalPhilo*sizeof(int));
 	for (i=0; i<totalPhilo; i++)
-		forks[i]=0;
+		forks[i]=1;
 	
 
 
@@ -75,8 +76,8 @@ void pickup_forks(int philosopher_number, int totalPhilo){
 		
 	//Before philosopher can enter critical section, checking is need to be performed
 	pthread_mutex_lock(&mutex);
-	while(forks[left] || forks[right]) 
-		pthread_cond_wait(&mutex, &condVar);
+	while(!forks[left] || !forks[right]) 
+		pthread_cond_wait(&condVar, &mutex);
 	//Entering C.S
 	//Simulate the behavior of eating by pausing thread the process/thread
 	printf("philosopher %d is now eating..........................................\n", philosopher_number);
