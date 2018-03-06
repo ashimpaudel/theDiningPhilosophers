@@ -8,6 +8,7 @@ This program is the solution to the dining-philosopher's problem using p_threads
 4. to execute the program run ./solvePhilosophy [number of philosopher]
 5. [optional] to clean invoke make clean
 
-#Snapshot of a running progarm
+# Snapshot of a running progarm
+![alt text](https://ibb.co/jfH6nn)
 
 
