@@ -9,6 +9,6 @@ This program is the solution to the dining-philosopher's problem using p_threads
 5. [optional] to clean invoke make clean
 
 # Snapshot of a running progarm
-![alt text](https://ibb.co/jfH6nn)
+![alt text](https://image.ibb.co/g6yqDS/Screenshot_from_2018_03_05_23_42_10.png)
 
 
