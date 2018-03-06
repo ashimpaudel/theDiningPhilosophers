@@ -59,11 +59,11 @@ int main(int argc, char*argv[]){
 
 void *solvePhilosophy(void* args){
 	//simulating the thinking state
-	printf("philosopher %d is now thinkinking\n",((pArgs*)args)->id);
+	printf("philosopher %d is now thinkinking                                              #\n",((pArgs*)args)->id);
 	sleep(rand()%3);
 	//as soon as thinking state is done, philosopher is hungry and wish to grab chopsticks, i.e. enter the critical section
         
-	printf("philosopher %d is now trying to pick up forks\n",((pArgs*)args)->id);
+	printf("philosopher %d is now trying to pick up forks                                  #\n",((pArgs*)args)->id);
 	pickup_forks(((pArgs*)args)->id,((pArgs*)args)->totalPhilo);	
 
 
@@ -80,7 +80,7 @@ void pickup_forks(int philosopher_number, int totalPhilo){
 		pthread_cond_wait(&condVar, &mutex);
 	//Entering C.S
 	//Simulate the behavior of eating by pausing thread the process/thread
-	printf("philosopher %d is now eating..........................................\n", philosopher_number);
+	printf("philosopher %d is now eating ###################################################\n", philosopher_number);
 	sleep(rand()%3);
 	return_forks(philosopher_number);
 			
@@ -90,7 +90,7 @@ void pickup_forks(int philosopher_number, int totalPhilo){
 
 
 void return_forks(int philosopher_number){
-	printf("philosopher %d done eating......................................................\n\n",philosopher_number);
+	printf("philosopher %d done eating #####################################################\n\n",philosopher_number);
 	pthread_cond_signal(&condVar);
 	pthread_mutex_unlock(&mutex);
 	//philosopher returns back to thinking state
