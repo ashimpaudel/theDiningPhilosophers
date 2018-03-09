@@ -9,7 +9,7 @@ This program is the solution to the dining-philosopher's problem using p_threads
 5. [optional] to clean invoke make clean
 
 # Snapshot of a running progarm
-![alt text](https://image.ibb.co/g6yqDS/Screenshot_from_2018_03_05_23_42_10.png)
+please see the different branch 'singleMutex'
 
 # Note to instructor
 The program on master branch does not make use of pthread_cond_t variable. There is a separate program that uses condition variable on the branch called singleMutex. The version on singleMutex branch makes use of all the APIs and variable types stated on the text book but does not solve the bounded waiting problem. To run singleMutex branch the instructions are same.
